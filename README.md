@@ -5,10 +5,10 @@
 1. Desmond Sedem Kojo Dedzoe - 22101911 - Role: Programmer
 2. Zonyra Hubert - 22167843 - Role: Programmer
 3. Derrick Pemboni 22019381- Role: Programmer
-4. Henry Edem Amekor- 22109636 - Role: Domain Expert
-5. Henry Ampomah Nana Kwesi -22047836 - Role: Knowledge Engineer 
+4. Henry Edem Amekor- 22109636 - Role: Knowledge Engineer
+5. Henry Ampomah Nana Kwesi -22047836 - Role: Programmer 
 6. Natasha Cobblah -22013436 - Role: Project Manager
-7. Cheryl Abena Asantewaa Kwakye -22081315 - Role: Domain Expert 
+7. Cheryl Abena Asantewaa Kwakye -22081315 - Role: Knowledge Engineer 
 
 
 ## Project Description
