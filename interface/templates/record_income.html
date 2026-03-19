@@ -1,0 +1,95 @@
+{% extends "base.html" %}
+
+{% block title %}Record Income - Church Finance Expert System{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header bg-success text-white">
+                <h4 class="card-title mb-0">
+                    <i class="fas fa-plus-circle"></i> Record Income
+                </h4>
+            </div>
+            <div class="card-body">
+                <form method="POST">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="member_id" class="form-label">Member ID</label>
+                                <input type="text" class="form-control" id="member_id" name="member_id"
+                                       placeholder="e.g., m001, m002, guest" required>
+                                <div class="form-text">Use 'guest' for non-members</div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="amount" class="form-label">Amount ($)</label>
+                                <input type="number" class="form-control" id="amount" name="amount"
+                                       step="0.01" min="0.01" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="fund_id" class="form-label">Fund</label>
+                                <select class="form-select" id="fund_id" name="fund_id" required>
+                                    <option value="">Select Fund</option>
+                                    <option value="f001">General Tithe</option>
+                                    <option value="f002">Building Fund</option>
+                                    <option value="f003">Missions</option>
+                                    <option value="f004">Youth Trip 2022</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="entry_method" class="form-label">Entry Method</label>
+                                <select class="form-select" id="entry_method" name="entry_method" required>
+                                    <option value="">Select Method</option>
+                                    <option value="Cash">Cash</option>
+                                    <option value="Cheque">Cheque</option>
+                                    <option value="Digital">Digital</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="service_date" class="form-label">Service Date</label>
+                                <input type="date" class="form-control" id="service_date" name="service_date" required>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="reason" class="form-label">Narration (Optional)</label>
+                                <input type="text" class="form-control" id="reason" name="reason"
+                                       placeholder="Description of the transaction">
+                            </div>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-success">
+                        <i class="fas fa-save"></i> Record Income
+                    </button>
+                </form>
+
+                {% if messages %}
+                <div class="mt-4">
+                    <h5>Processing Results:</h5>
+                    <div class="alert alert-info">
+                        {% for message in messages %}
+                        <p class="mb-1">{{ message }}</p>
+                        {% endfor %}
+                    </div>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

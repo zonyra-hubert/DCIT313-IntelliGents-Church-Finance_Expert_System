@@ -1,14 +1,14 @@
-# DCIT313-Group_Alpha-Church_Finance_Expert_System
+# DCIT313-Group_IntelliGents-Church_Finance_Expert_System
 
 ## Group Members
 
 1. Desmond Sedem Kojo Dedzoe - 22101911 - Role: Programmer
 2. Zonyra Hubert - 22167843 - Role: Programmer
 3. Derrick Pemboni 22019381- Role: Programmer
-4. Henry Edem Amekor- 22109636 - Role: Knowledge Engineer
-5. Henry Ampomah Nana Kwesi -22047836 - Role: Programmer 
+4. Henry Edem Amekor- 22109636 - Role: Knowledge Engineer 
+5. Henry Ampomah Nana Kwesi -22047836 - Role:  Programmer 
 6. Natasha Cobblah -22013436 - Role: Project Manager
-7. Cheryl Abena Asantewaa Kwakye -22081315 - Role: Knowledge Engineer 
+7. Cheryl Abena Asantewaa Kwakye -22081315 - Role: Knowledge Engineer
 
 
 ## Project Description
@@ -27,5 +27,41 @@ Using SWI-Prolog as the inference engine and Python (with pyswip) as the user in
 ## Setup & Running
 
 1. Ensure you have `swi-prolog` installed on your machine.
-2. Install the required python library: `pip install pyswip`
-3. Run the interface: `python interface/app.py`
+2. Install the required python libraries: 
+   ```
+   pip install -r requirements.txt
+   ```
+   or manually:
+   ```
+   pip install pyswip flask
+   ```
+3. Run the web interface: `python interface/app.py`
+4. Open your browser and go to `http://localhost:5000`
+
+
+## Features
+
+The web interface provides the same functionality as the command-line version with an intuitive graphical interface:
+
+- **Record Income**: Log tithes and donations with intelligent validation
+- **Record Expense**: Track expenses with budget checking
+- **Bank Reconciliation**: Verify deposits against system records
+- **Tax Statements**: Generate IRS-compliant contribution statements
+- **Audit Trail**: View complete transaction history
+
+## Expert System Rules
+
+The system implements several AI techniques:
+
+- **Pattern Recognition**: Flags entries exceeding 500% of member's average giving
+- **Constraint Satisfaction**: Prevents routing to closed/invalid funds
+- **Member Status Logic**: Prompts for new profiles when guests give tithes
+- **Expense Audit**: Validates expenses against predefined budgets
+- **Financial Routing**: Automatically directs funds to correct ledgers
+
+## Architecture
+
+- **Frontend**: HTML/CSS/JavaScript with Bootstrap for responsive design
+- **Backend**: Python Flask web framework
+- **Knowledge Base**: SWI-Prolog for expert system rules
+- **Database**: In-memory storage (can be extended to persistent storage)

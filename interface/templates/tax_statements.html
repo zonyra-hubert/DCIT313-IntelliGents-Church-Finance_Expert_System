@@ -1,0 +1,97 @@
+{% extends "base.html" %}
+
+{% block title %}Tax Statements - Church Finance Expert System{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header bg-warning text-dark">
+                <h4 class="card-title mb-0">
+                    <i class="fas fa-file-invoice-dollar"></i> Tax Statements
+                </h4>
+            </div>
+            <div class="card-body">
+                <p class="lead">End-of-year contribution statements for members</p>
+
+                {% if statements %}
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Member ID</th>
+                                <th>Total Contributed</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                            {% for statement in statements %}
+                            <tr>
+                                <td>{{ statement.member_id }}</td>
+                                <td>{{statement.total_contributed }}</td>
+                                <td>
+                                    <button class="btn btn-sm btn-primary" onclick="printStatement(`{{ statement.member_id }}`, `{{ statement.total_contributed }}`)">
+                                        <i class="fas fa-print"></i> Print
+                                    </button>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="alert alert-success mt-3">
+                    <i class="fas fa-check-circle"></i>
+                    <strong>Tax statements completed!</strong> All statements are IRS-compliant.
+                </div>
+                {% else %}
+                <div class="alert alert-info">
+                    <i class="fas fa-info-circle"></i>
+                    No income transactions recorded yet. Add some income entries first.
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+function printStatement(memberId, total) {
+    // Ensure total is a number
+    const totalAmount = parseFloat(total);
+    
+    const printWindow = window.open('', '_blank');
+    printWindow.document.write(`
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <title>Tax Statement - ${memberId}</title>
+            <style>
+                body { font-family: Arial, sans-serif; margin: 40px; }
+                .header { text-align: center; border-bottom: 2px solid #000; padding-bottom: 20px; margin-bottom: 30px; }
+                .statement { margin: 20px 0; }
+                .total { font-size: 18px; font-weight: bold; color: #2c3e50; }
+                .footer { margin-top: 50px; font-size: 12px; color: #666; }
+            </style>
+        </head>
+        <body>
+            <div class="header">
+                <h1>Church Finance Department</h1>
+                <h2>Internal Revenue Service Compliant Tax Statement</h2>
+            </div>
+            <div class="statement">
+                <p><strong>Member ID:</strong> ${memberId}</p>
+                <p><strong>Tax Year:</strong> ${new Date().getFullYear()}</p>
+                <p><strong>Total Contributions:</strong> <span class="total">$${totalAmount.toFixed(2)}</span></p>
+            </div>
+            <div class="footer">
+                <p>This statement is provided for tax purposes and reflects all recorded contributions for the year.</p>
+                <p>Generated on: ${new Date().toLocaleDateString()}</p>
+            </div>
+        </body>
+        </html>
+    `);
+    printWindow.document.close();
+    printWindow.print();
+}
+</script>
+{% endblock %}

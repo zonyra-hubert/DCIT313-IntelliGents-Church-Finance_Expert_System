@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+
+{% block title %}Record Expense - Church Finance Expert System{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header bg-danger text-white">
+                <h4 class="card-title mb-0">
+                    <i class="fas fa-minus-circle"></i> Record Expense
+                </h4>
+            </div>
+            <div class="card-body">
+                <form method="POST">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="category" class="form-label">Expense Category</label>
+                                <select class="form-select" id="category" name="category" required>
+                                    <option value="">Select Category</option>
+                                    <option value="Utilities">Utilities</option>
+                                    <option value="Maintenance">Maintenance</option>
+                                    <option value="Missions">Missions</option>
+                                    <option value="Salaries">Salaries</option>
+                                    <option value="Marketing">Marketing</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="amount" class="form-label">Amount ($)</label>
+                                <input type="number" class="form-control" id="amount" name="amount"
+                                       step="0.01" min="0.01" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="reason" class="form-label">Reason for Expense (Optional)</label>
+                        <input type="text" class="form-control" id="reason" name="reason"
+                               placeholder="Description of the expense">
+                    </div>
+
+                    <button type="submit" class="btn btn-danger">
+                        <i class="fas fa-save"></i> Record Expense
+                    </button>
+                </form>
+
+                {% if messages %}
+                <div class="mt-4">
+                    <h5>Processing Results:</h5>
+                    <div class="alert alert-info">
+                        {% for message in messages %}
+                        <p class="mb-1">{{ message }}</p>
+                        {% endfor %}
+                    </div>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

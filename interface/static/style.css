@@ -1,0 +1,47 @@
+/* Custom styles for Church Finance Expert System */
+
+.church-header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.card-hover:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.btn-church {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border: none;
+    color: white;
+}
+
+.btn-church:hover {
+    background: linear-gradient(135deg, #5a6fd8 0%, #6a4190 100%);
+    color: white;
+}
+
+.alert-expert {
+    border-left: 4px solid #28a745;
+}
+
+.reconciliation-match {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.audit-entry {
+    border-left: 3px solid #007bff;
+    background-color: #f8f9fa;
+}
+
+.tax-statement {
+    border: 2px solid #ffc107;
+    background-color: #fff3cd;
+}

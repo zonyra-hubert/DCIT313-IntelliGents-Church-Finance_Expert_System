@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+
+{% block title %}Home - Church Finance Expert System{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header bg-primary text-white">
+                <h4 class="card-title mb-0">
+                    <i class="fas fa-church"></i> Welcome to Church Finance Expert System
+                </h4>
+            </div>
+            <div class="card-body">
+                <p class="lead">This intelligent system helps manage church finances with automated decision-making and audit trails.</p>
+
+                <div class="row mt-4">
+                    <div class="col-md-4">
+                        <div class="card h-100">
+                            <div class="card-body text-center">
+                                <i class="fas fa-plus-circle fa-3x text-success mb-3"></i>
+                                <h5>Record Income</h5>
+                                <p>Log tithes, offerings, and donations with intelligent routing</p>
+                                <a href="/record_income" class="btn btn-success">Get Started</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card h-100">
+                            <div class="card-body text-center">
+                                <i class="fas fa-minus-circle fa-3x text-danger mb-3"></i>
+                                <h5>Record Expenses</h5>
+                                <p>Track expenses with automatic budget validation</p>
+                                <a href="/record_expense" class="btn btn-danger">Get Started</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card h-100">
+                            <div class="card-body text-center">
+                                <i class="fas fa-balance-scale fa-3x text-info mb-3"></i>
+                                <h5>Bank Reconciliation</h5>
+                                <p>Verify deposits and maintain accountability</p>
+                                <a href="/bank_reconciliation" class="btn btn-info">Get Started</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mt-3">
+                    <div class="col-md-6">
+                        <div class="card h-100">
+                            <div class="card-body text-center">
+                                <i class="fas fa-file-invoice-dollar fa-3x text-warning mb-3"></i>
+                                <h5>Tax Statements</h5>
+                                <p>Generate IRS-compliant contribution statements</p>
+                                <a href="/tax_statements" class="btn btn-warning">View Statements</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card h-100">
+                            <div class="card-body text-center">
+                                <i class="fas fa-history fa-3x text-secondary mb-3"></i>
+                                <h5>Audit Trail</h5>
+                                <p>View complete transaction history and logs</p>
+                                <a href="/audit_trail" class="btn btn-secondary">View Trail</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
