@@ -59,7 +59,7 @@ The system implements several AI techniques:
 - **Expense Audit**: Validates expenses against predefined budgets
 - **Financial Routing**: Automatically directs funds to correct ledgers
 
-## Architecture
+## Architecture.
 
 - **Frontend**: HTML/CSS/JavaScript with Bootstrap for responsive design
 - **Backend**: Python Flask web framework
